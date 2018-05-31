@@ -1,10 +1,7 @@
 # mongoose-auto-increment
 
-I have made few changes for my personal project. First change I have done is reset the counter to specific number and another change was my personal preference of writing code.
-
-[![Build Status](https://travis-ci.org/codetunnel/mongoose-auto-increment.png?branch=master)](https://travis-ci.org/codetunnel/mongoose-auto-increment)
-[![Dependencies Status](https://gemnasium.com/codetunnel/mongoose-auto-increment.png)](https://gemnasium.com/codetunnel/mongoose-auto-increment)
-[![NPM version](https://badge.fury.io/js/mongoose-auto-increment.png)](http://badge.fury.io/js/mongoose-auto-increment)
+Project copied from [mongoose-auto-increment-fix](https://www.npmjs.com/package/mongoose-auto-increment-fix)
+I have made few changes for my personal project. First change I have done is reset the counter to specific number or default number and another change was my personal preference of writing code.
 
 > Mongoose plugin that auto-increments any ID field on your schema every time a document is saved.
 
@@ -14,7 +11,7 @@ I have made few changes for my personal project. First change I have done is res
 
 ## Getting Started
 
-> npm install mongoose-auto-increment
+> npm install mongoose-auto-increment-fix-2
 
 Once you have the plugin installed it is very simple to use. Just get reference to it, initialize it by passing in your
 mongoose connection and pass `autoIncrement.plugin` to the `plugin()` function on your schema.
@@ -102,7 +99,7 @@ Book.nextCount(function(err, count) {
 
 nextCount is both a static method on the model (`Book.nextCount(...)`) and an instance method on the document (`book.nextCount(...)`).
 
-### Want to reset counter to a no or back to the start value? // edited by [@theyeshu](https://github.com/theyeshu/)
+### Want to reset counter to a number or back to the start value?
 
 ````js
 bookSchema.plugin(autoIncrement.plugin, {
@@ -122,8 +119,8 @@ book.save(function (err) {
 
         // count === 101 -> true
 
-        book.resetCount(100, function(err, nextCount) { // edited by [@theyeshu](https://github.com/theyeshu/)
-            // passing null will reset the counter to default count // edited by [@theyeshu](https://github.com/theyeshu/)
+        book.resetCount(100, function(err, nextCount) {
+            // passing null will reset the counter to default count
             // nextCount === 100 -> true
 
         });
