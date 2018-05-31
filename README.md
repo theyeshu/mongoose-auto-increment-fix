@@ -1,5 +1,7 @@
 # mongoose-auto-increment
 
+I have made few changes for my personal project. First change I have done is reset the counter to specific number and another change was my personal preference of writing code.
+
 [![Build Status](https://travis-ci.org/codetunnel/mongoose-auto-increment.png?branch=master)](https://travis-ci.org/codetunnel/mongoose-auto-increment)
 [![Dependencies Status](https://gemnasium.com/codetunnel/mongoose-auto-increment.png)](https://gemnasium.com/codetunnel/mongoose-auto-increment)
 [![NPM version](https://badge.fury.io/js/mongoose-auto-increment.png)](http://badge.fury.io/js/mongoose-auto-increment)
@@ -45,14 +47,14 @@ That's it. Now you can create book entities at will and they will have an `_id` 
 var authorSchema = new mongoose.Schema({
     name: String
 });
-    
+
 var bookSchema = new Schema({
     author: { type: Number, ref: 'Author' },
     title: String,
     genre: String,
     publishDate: Date
 });
-    
+
 bookSchema.plugin(autoIncrement.plugin, 'Book');
 authorSchema.plugin(autoIncrement.plugin, 'Author');
 ````
@@ -100,7 +102,7 @@ Book.nextCount(function(err, count) {
 
 nextCount is both a static method on the model (`Book.nextCount(...)`) and an instance method on the document (`book.nextCount(...)`).
 
-### Want to reset counter back to the start value?
+### Want to reset counter to a no or back to the start value? // edited by [@theyeshu](https://github.com/theyeshu/)
 
 ````js
 bookSchema.plugin(autoIncrement.plugin, {
@@ -120,8 +122,8 @@ book.save(function (err) {
 
         // count === 101 -> true
 
-        book.resetCount(function(err, nextCount) {
-
+        book.resetCount(100, function(err, nextCount) { // edited by [@theyeshu](https://github.com/theyeshu/)
+            // passing null will reset the counter to default count // edited by [@theyeshu](https://github.com/theyeshu/)
             // nextCount === 100 -> true
 
         });
