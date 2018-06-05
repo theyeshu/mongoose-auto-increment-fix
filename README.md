@@ -1,7 +1,7 @@
 # mongoose-auto-increment
 
 Project copied from [mongoose-auto-increment-fix](https://www.npmjs.com/package/mongoose-auto-increment-fix)
-I have made few changes for my personal project. First change I have done is reset the counter to specific number or default number and another change was my personal preference of writing code.
+I have made few changes for my personal project. First change I have made is that, user can reset the counter to specific number or default number and another change was my personal preference of writing code.
 
 > Mongoose plugin that auto-increments any ID field on your schema every time a document is saved.
 
@@ -11,7 +11,7 @@ I have made few changes for my personal project. First change I have done is res
 
 ## Getting Started
 
-> npm install mongoose-auto-increment-fix-2
+> npm install mongoose-auto-increment-fix-yk
 
 Once you have the plugin installed it is very simple to use. Just get reference to it, initialize it by passing in your
 mongoose connection and pass `autoIncrement.plugin` to the `plugin()` function on your schema.
